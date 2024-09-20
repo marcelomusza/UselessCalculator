@@ -1,9 +1,11 @@
-﻿using System;
+﻿using UselessCalculator.Application;
 
 class Program
 {
     static void Main(string[] args)
     {
+        ICalculationService calculationService = new CalculationService();
+
         var num1 = GetValidNumber("Enter the first number: ");
         var num2 = GetValidNumber("Enter the second number: ");
 
@@ -11,10 +13,10 @@ class Program
         
         double result = selection switch
         {
-            1 => num1 + num2,
-            2 => num1 - num2,
-            3 => num1 * num2,
-            4 => num1 / num2,
+            1 => calculationService.Add(num1, num2),
+            2 => calculationService.Substract(num1, num2),
+            3 => calculationService.Multiply(num1, num2),
+            4 => calculationService.Divide(num1, num2),
             _ => throw new InvalidOperationException("Invalid operation.")
         };
 
