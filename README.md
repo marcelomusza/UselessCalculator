@@ -7,5 +7,8 @@ The main idea of this project is to start from a very simple project, and contin
 ## Upgrades for this useless application
 - ~~Basic Console Application~~
 - ~~Add Dockerfile~~
-- Upgraded Console Application (Business Logic extracted)
+- ~~Upgraded Console Application (Business Logic extracted)~~
+- Add Unit Tests
 - Add WebAPI Project and connect it to the existing business logic
+- Upgrade Dockerfile
+- Add Integration Tests
