@@ -10,7 +10,9 @@ The main idea of this project is to start from a very simple project, and contin
 - ~~Upgraded Console Application (Business Logic extracted)~~
 - ~~Add Unit Tests~~
 - ~~Add WebAPI Project and connect it to the existing business logic~~
-- Remove query string parameters, add json in the request body instead
+- ~~Introduce Logging with Serilog~~
+- ~~Remove query string parameters, add json in the request body instead~~
+- ~~Add FluentValidation~~
 - Upgrade Dockerfile
 - Add logging and error handling
 - Add authentication
