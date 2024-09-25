@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UselessCalculator.Api.Dtos;
 using UselessCalculator.Application;
 
 namespace UselessCalculator.Api.Controllers;
@@ -17,38 +18,38 @@ public class CalculatorController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("add")]
-    public ActionResult<double> Add([FromQuery] double num1, [FromQuery] double num2)
+    [HttpPost("add")]
+    public ActionResult<double> Add([FromBody] CalculationRequestDto request)
     {
         _logger.LogInformation("Log here for Add");
-        var result = _calculationService.Add(num1, num2);
+        var result = _calculationService.Add(request.Num1, request.Num2);
         return Ok(result);
     }
 
-    [HttpGet("substract")]
-    public ActionResult<double> Substract([FromQuery] double num1, [FromQuery] double num2)
+    [HttpPost("substract")]
+    public ActionResult<double> Substract([FromBody] CalculationRequestDto request)
     {
         _logger.LogInformation("Log here for Substract");
-        var result = _calculationService.Substract(num1, num2);
+        var result = _calculationService.Substract(request.Num1, request.Num2);
         return Ok(result);
     }
 
-    [HttpGet("multiply")]
-    public ActionResult<double> Multiply([FromQuery] double num1, [FromQuery] double num2)
+    [HttpPost("multiply")]
+    public ActionResult<double> Multiply([FromBody] CalculationRequestDto request)
     {
         _logger.LogInformation("Log here for Multiply");
-        var result = _calculationService.Multiply(num1, num2);
+        var result = _calculationService.Multiply(request.Num1, request.Num2);
         return Ok(result);
     }
 
-    [HttpGet("divide")]
-    public ActionResult<double> Divide([FromQuery] double num1, [FromQuery] double num2)
+    [HttpPost("divide")]
+    public ActionResult<double> Divide([FromBody] CalculationRequestDto request)
     {
         
         try
         {
             _logger.LogInformation("Log here for Divide");
-            var result = _calculationService.Multiply(num1, num2);
+            var result = _calculationService.Divide(request.Num1, request.Num2);
             return Ok(result);
         }
         catch (DivideByZeroException)
