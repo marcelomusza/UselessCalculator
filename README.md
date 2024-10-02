@@ -13,8 +13,8 @@ The main idea of this project is to start from a very simple project, and contin
 - ~~Introduce Logging with Serilog~~
 - ~~Remove query string parameters, add json in the request body instead~~
 - ~~Add FluentValidation~~
-- Upgrade Dockerfile
-- Add logging and error handling
+- ~~Upgrade Dockerfile~~
+- ~~Add logging~~ and error handling
 - Add authentication
 - Add rate-limiting
 - Add Integration Tests
