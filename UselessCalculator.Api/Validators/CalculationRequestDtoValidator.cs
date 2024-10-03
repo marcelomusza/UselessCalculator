@@ -12,7 +12,7 @@ public class CalculationRequestDtoValidator : AbstractValidator<CalculationReque
             .WithMessage("Num1 is required...");
 
         RuleFor(x => x.Num2)
-            .NotEmpty()
+            .NotNull()
             .WithMessage("Num2 is required...");
 
     }

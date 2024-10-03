@@ -1,7 +1,9 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
 using System.Reflection;
+using UselessCalculator.Api.Middleware;
 using UselessCalculator.Application;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,7 +30,10 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 //DI
 builder.Services.AddScoped<ICalculationService, CalculationService>();
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
